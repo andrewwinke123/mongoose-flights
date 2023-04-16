@@ -13,8 +13,8 @@ const flightSchema = new Schema( {
   timestamps: true
 })
 
-const Flight = mongoose.model('Flight', movieSchema)
+const Flight = mongoose.model('Flight', flightSchema)
 
 export {
-  Movie,
+  Flight,
 }
