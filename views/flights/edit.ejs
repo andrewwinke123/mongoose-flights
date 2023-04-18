@@ -23,7 +23,7 @@
     <label for="flightNo-input">Flight Number:</label>
     <input type="text" name="flightNo" id="flightNo-input">
     <label for="departures-input">Departures:</label>
-    <input type="datetime-local" name="departs" id="departs-input">
+    <input type="datetime-local" name="departs" id="departs-input" value="<%= flight.departs.toISOString().slice(0, 16) %>">
     <button type="submit">Add Flight</button>
   </form>
 </main>

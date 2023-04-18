@@ -5,6 +5,7 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 import createError from 'http-errors'
 import logger from 'morgan'
+import methodOverride from 'method-override'
 import './config/database.js'
 
 
@@ -31,6 +32,9 @@ app.use(
 // mount imported routes
 app.use('/', indexRouter)
 app.use('/flights', flightsRouter)
+app.use(methodOverride('_method'))
+app.use("/", indexRouter)
+app.use("/flights", flightsRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
