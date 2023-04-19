@@ -30,7 +30,7 @@
   <label for="seat-input">Seat:</label>
   <input name="seat" required pattern="[A-F][1-9]\d?">
   <label for="price-input">Prices:</label>
-  <input name="price" id="price-input">
+  <input type="number" name="price" id="price-input">
   <button type="submit">Add Ticket</button>
 </form>
 <% if (flight.tickets.length) { %>
@@ -43,7 +43,7 @@
         </tr>
       </thead>
       <tbody>
-        <% flight.tickets.forEach(function(tickets) { %>
+        <% flight.tickets.forEach(function(ticket) { %>
           <tr>
             <td><%= ticket.seat %></td>
             <td><%= ticket.price %></td>
