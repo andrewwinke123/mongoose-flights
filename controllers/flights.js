@@ -112,7 +112,7 @@ function createTickets(req, res) {
 function addToMenu(req, res) {
   Flight.findById(req.params.flightId)
   .then(flight => {
-    flight.menu.push(req.body.performerId)
+    flight.menu.push(req.body.mealId)
     flight.save()
 		.then(() => {
 		  res.redirect(`/flights/${flight._id}`)
