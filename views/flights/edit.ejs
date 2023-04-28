@@ -5,7 +5,7 @@
 
 <main>
   <h1><%= title %></h1>
-  <form id="new-form" action="/flights" method="POST">
+  <form id="new-form" action="/flights/<%= flight._id %>?_method=PUT" method="POST">
     <label for="airline-select">Airline:</label>
     <select name="airline" id="airline-select">
       <option value="American">American</option>
@@ -24,7 +24,7 @@
     <input type="text" name="flightNo" id="flightNo-input">
     <label for="departures-input">Departures:</label>
     <input type="datetime-local" name="departs" id="departs-input" value="<%= flight.departs.toISOString().slice(0, 16) %>">
-    <button type="submit">Add Flight</button>
+    <button type="submit">Save Flight</button>
   </form>
 </main>
 
